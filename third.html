@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+            background-color: rgb(44, 241, 238);
+        }
+        #captcha {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        #btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: rgb(216, 206, 224);
+        }
+    </style>
+</head>
+ <body>
+    <div class="container">   
+        <div class="captcha" id="captcha">CAPTCHA: 2k7s9</div>
+        <button id="btn">Click</button>
+    </div>
+    <script>
+        function generatecaptcha(length) {
+            let char = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            let result = "";
+            for (let i = 0; i < length; i++) {
+                result += char.charAt(Math.floor(Math.random() * char.length));    
+            }
+            return result; 
+        }
+        
+        let captchadiv = document.getElementById("captcha");
+        captchadiv.textContent = "CAPTCHA: " + generatecaptcha(5);
+
+        document.getElementById("btn").addEventListener("click", function() {
+           captchadiv.textContent = "CAPTCHA: " + generatecaptcha(5);
+        });
+    </script>
+    
+</body>
+
+</html>

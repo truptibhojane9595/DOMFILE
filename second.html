@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+        }
+        #colordiv {
+            width: 200px;
+            height: 200px;
+            background-color: lightgray;
+            margin: 0 auto;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 200px;
+        }
+        #btncolor {
+            padding: 10px 20px;
+            margin-top: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: rgb(217, 232, 217);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="colordiv">Click the button chage a color</div>
+        <button id="btncolor">Change</button>
+    </div>
+
+    <script>
+        document.getElementById("btncolor").addEventListener("click",function(){
+            let colorDiv = document.getElementById("colordiv");
+            let randomclr = "#" + Math.floor(Math.random()*123456).toString(20);
+            colorDiv.style.backgroundColor = randomclr;
+        });
+    </script>
+</body>
+
+</html>
