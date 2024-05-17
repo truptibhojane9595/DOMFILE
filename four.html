@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Capitalize </h2>
+    <div class="container">
+        <input type="text" placeholder="Enter text" id="input">
+        <button id="btn">Capitalize</button>
+        <button id="reverseBtn">Reverse</button>
+        <button id="reverseWordsBtn">Reverse Words</button>
+    </div>
+
+    <div id="output"></div>
+
+    <script>
+        let input = document.getElementById("input");
+        let capitalizeBtn = document.getElementById("btn");
+        let reverseBtn = document.getElementById("reverseBtn");
+        let reverseWordsBtn = document.getElementById("reverseWordsBtn");
+        let output = document.getElementById("output");
+
+        capitalizeBtn.addEventListener("click", () => {
+            let inputValue = input.value;
+            let res = upper(inputValue);
+            output.innerHTML = `<h2>${res}</h2>`;
+        });
+
+        reverseBtn.addEventListener("click", () => {
+            let inputValue = input.value;
+            let res = reverse(inputValue);
+            output.innerHTML = `<h2>${res}</h2>`;
+        });
+
+        reverseWordsBtn.addEventListener("click", () => {
+            let inputValue = input.value;
+            let res = reverseWords(inputValue);
+            output.innerHTML = `<h2>${res}</h2>`;
+        });
+
+        function upper(str) {
+            let s = "";
+            for(let i=0;i< str.length;i++){
+                if(i==0 || str[i-1] ==""){
+                    s=s+str[i].toUpperCase();
+                }
+                else{
+                    s=s+str[i];
+                }
+            }
+            return s;
+        }
+
+        function reverse(str) {
+            let m = str.split("").reverse().join("");
+            return m;
+        }
+
+        function reverseWords(input) {
+            let k = input.split(' ');
+            let l = k.reverse();
+            let m = l.join(' ');
+            return m;
+        }
+
+    </script>
+</body>
+
+</html>
