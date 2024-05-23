@@ -1,0 +1,154 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 400px;
+            text-align: center;
+        }
+        .first {
+            margin-bottom: 20px;
+        }
+        .line {
+            width: 50px;
+            height: 4px;
+            background-color: black;
+            margin: 10px auto;
+        }
+        .review .img img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        .random {
+            margin-top: 10px;
+            background-color: #007bff;
+        }
+        .random:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="first">
+            <h1>Review</h1>
+            <div class="line"></div>
+        </div>
+        <article class="review">
+            <div class="img">
+                <img src="./imagesgirl/girl1.jfif" alt="person image" id="personimg">
+            </div>
+            <h3 id="people">Trupti Bhojane</h3>
+            <p id="employ">Web Designer</p>
+            <p id="inform">A web designer creates the layout and design of a website. 
+                In simple terms, a website designer makes a site look good. They use design programs
+                 to create visual elements.25 Mar 2024
+            </p>
+            <div class="buttons">
+                <button class="pre" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i> Previous
+                </button>
+                <button class="next" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i> Next
+                </button>
+            </div>
+            <button class="random" id="randomBtn">Surprise Me</button>
+        </article>
+    </div>
+    
+    <script>
+        const reviews = [
+            {
+                img: 'https://wallpapers.com/images/hd/professional-profile-pictures-1427-x-1920-txfewtw6mcg0y6hk.jpg',
+                name: 'Trupti Bhojane',
+                job: 'Web Designer',
+                text:'A web designer creates the layout and design of a website. In simple terms, a website designer makes a site look good. They use design programs to create visual elements.25 Mar 2024',
+                
+            },
+            {
+                img: 'https://img.freepik.com/free-photo/young-beautiful-woman-smiling-posing-purple-wall_176420-2852.jpg',
+                name: 'Siya Deshmukh',
+                job: 'Software Engineer',
+                text: 'Software engineers apply engineering principles and knowledge of programming languages to build software solutions for end users. Software engineers design and develop computer games, business applications, operating systems, network control systems, and middleware—to name just a few of the many career paths available.'
+            },
+            {
+                img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkvMth6PGDcaOL-btl5nh01iijO05qDeEsVw&s',
+                name: 'Prita Jane',
+                job: 'Graphic Designer',
+                text: 'Graphic designers create images and layouts for some of the following: Company brand identity (logos, typography, and colour palettes) User interfaces on apps and websites. Books, magazines, newspapers, and other publications.29 Nov 2023.'
+            }
+        ];
+
+        let currentIndex = 0;
+
+        const img = document.getElementById('personimg');
+        const people = document.getElementById('people');
+        const employ = document.getElementById('employ');
+        const inform = document.getElementById('inform');
+
+        function showReview(index) {
+            const review = reviews[index];
+            img.src = review.img;
+            people.textContent = review.name;
+            employ.textContent = review.job;
+            inform.textContent = review.text;
+        }
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
+            showReview(currentIndex);
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % reviews.length;
+            showReview(currentIndex);
+        });
+
+        document.getElementById('randomBtn').addEventListener('click', () => {
+            currentIndex = Math.floor(Math.random() * reviews.length);
+            showReview(currentIndex);
+        });
+
+        showReview(currentIndex);
+    </script>
+</body>
+</html> 
+
+
+

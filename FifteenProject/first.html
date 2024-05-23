@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Flipper</title>
+<style>
+    #btn {
+        width: 70px;
+        height: 30px;
+        border: 1px solid black;
+        
+    }
+</style>
+</head>
+<body>
+<button id="btn">Color</button>
+<script>
+function RandomColor() {
+    var r = Math.floor(Math.random() * 256);
+    var g = Math.floor(Math.random() * 256);
+    var b = Math.floor(Math.random() * 256);
+    return "rgb(" + r + ", " + g + ", " + b + ")";
+}
+
+let button = document.getElementById("btn");
+button.addEventListener("click", () => {
+    document.body.style.backgroundColor = RandomColor();
+});
+</script>
+</body>
+</html>

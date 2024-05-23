@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+        nav {
+            background: #eebdbd;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .nav-center {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .nav-header {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .nav-toggle {
+            display: none;
+            font-size: 24px;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .links {
+            list-style: none;
+            display: flex;
+        }
+
+        .links li {
+            margin: 0 10px;
+            font-size: 20px;
+        }
+
+        .links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        .links a:hover {
+            background: #f4cece;
+            border-radius: 5px;
+        }
+
+        .social-icons {
+            list-style: none;
+            display: flex;
+        }
+
+        .social-icons li {
+            margin: 0 10px;
+        }
+
+        .social-icons a {
+            color: #f5e9e9;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            .links,
+            .social-icons {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                background: #f3c8c8;
+            }
+
+            .links li,
+            .social-icons li {
+                margin: 10px 0;
+            }
+
+            .nav-center {
+                flex-direction: column;
+            }
+
+            .nav-center.active .links,
+            .nav-center.active .social-icons {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-center">
+            <div class="nav-header">
+                <img src="./logoimg.svg" class="logo" alt="logo" />
+            </div>
+            <ul class="links">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <a href="projects.html">Projects</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+            <ul class="social-icons">
+                <li>
+                    <a href="https://www.facebook.com/login.php/">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.twitter.com">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/login">
+                        <i class="fab fa-behance"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://in.linkedin.com/">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <script>
+        document.querySelectorAll('.links a').forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                const href = this.getAttribute('href');
+
+                window.location.href = href;
+            });
+        });
+    </script>
+
+</body>
+
+</html>
