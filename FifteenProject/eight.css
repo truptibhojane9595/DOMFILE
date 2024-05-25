@@ -51,8 +51,8 @@ body {
 .btn {
   display: inline-block;
   padding: 0.5rem 1rem;
-  border: 2px solid #333;
-  color: #333;
+  border: 2px solid #95b670;
+  color: #95b670;
   background: transparent;
   cursor: pointer;
   transition: background 0.3s ease, color 0.3s ease;
@@ -90,7 +90,7 @@ body {
   height: 200px;
   object-fit: cover;
   border-radius: 0.5rem;
-  border: 0.25rem solid #c59d5f;
+  border: 0.25rem solid #ccc;
 }
 
 .item-info {

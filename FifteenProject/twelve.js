@@ -2,7 +2,7 @@ const giveaway = document.querySelector('.giveaway');
 const deadline = document.querySelector('.format');
 const items = document.querySelectorAll('.deadline h4');
 
-const futureDate = new Date(new Date().getTime() + 10 * 24 * 60 * 60 * 1000); // 10 days from now
+const futureDate = new Date(new Date().getTime() + 10 * 24 * 60 * 60 * 1000); 
 
 function format(item) {
   return item < 10 ? `0${item}` : item;
