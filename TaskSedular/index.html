@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminder App</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Reminder App</h1>
+        <input type="text" id="title" placeholder="Task Title">
+        <textarea id="description" placeholder="Task Description"></textarea>
+        <input type="datetime-local" id="dateTime">
+        <button onclick="scheduleReminder()">Schedule Reminder Task</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Date and Time</th>
+                    <th>Countdown</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="reminderList"></tbody>
+        </table>
+    </div>
+    <audio src="./Message Tones Ringtones.html" id="sound"></audio>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
